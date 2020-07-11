@@ -5,7 +5,7 @@ minimal_mistakes_skin    : "default" # 테마 색상 변경 "air", "aqua", "cont
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "견디고 하다보면 늘어가는 코딩공부"
+title                    : "PORTFOLIO"
 title_separator          : "&#124;"
 subtitle                 : ""# site tagline that appears below site title in masthead
 name                     : "jeonbyeongmin"
@@ -15,7 +15,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jeonbyeongmin/jeonbyeongmin.github.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # 타이틀 옆에 작게 들어가는 이미지path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "견디고 하다보면 늘어가는 코딩공부"
+masthead_title           : "PORTFOLIO"
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 
@@ -83,9 +83,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "전병민"
+  name             : "JEON BYEONGMIN"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "아직은 **초보 개발자**"
+  bio              : "**초보 개발자**"
   location         : #"Republic of korea"
   email            : "qudals7613@gmail.com"
   links:
