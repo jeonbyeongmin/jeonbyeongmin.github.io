@@ -1,29 +1,30 @@
 
 # 테마 설명 https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-minimal_mistakes_skin    : "default" # 테마 색상 변경 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # 테마 색상 변경 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "PORTFOLIO"
+title                    : "JEON"
 title_separator          : "&#124;"
 subtitle                 : ""# site tagline that appears below site title in masthead
 name                     : "jeonbyeongmin"
-description              : "다양한 언어와 개발을 공부하는 블로그."
+description              : "답답해서 내가 보려고 만든 블로그"
 url                      : "https://jeonbyeongmin.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jeonbyeongmin/jeonbyeongmin.github.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # 타이틀 옆에 작게 들어가는 이미지path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "PORTFOLIO"
+masthead_title           : "내가 쓰고 내가 공부하는 블로그"
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 
 # 댓글 관련 부분
 comments:
-  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : jeonbyeongmin # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -83,10 +84,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "JEON BYEONGMIN"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "**developer**"
-  location         : #"Republic of korea"
+  name             : "전병민"
+  avatar           : "/assets/images/profile/jeon.jpeg"
+  bio              : "developer"
+  location         : "Republic Of Korea"
   email            : "qudals7613@gmail.com"
   links:
     - label: "Email"

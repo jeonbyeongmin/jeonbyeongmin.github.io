@@ -1,0 +1,82 @@
+I"�	<p><br />
+가장 간단한 알고리즘으로 쉽게 구현할 수 있는 정렬은 다음과 같다.</p>
+
+<ol>
+  <li>Insertion Sort – 삽입정렬</li>
+  <li>Selection Sort – 선택정렬</li>
+  <li>Bubble Sort – 버블정렬</li>
+</ol>
+
+<p>버블정렬과 선택정렬은 모든 경우에 O(n^2)시간이 걸리고 삽입정렬 또한 최악의 경우 O(n^2)시간이 걸리기 때문에 매우 비효율적인 알고리즘이라는 것을 알 수 있다. 다음은 조금 복잡한 알고리즘으로 구현할 수 있는 정렬이다.</p>
+
+<ol>
+  <li>퀵정렬</li>
+  <li>힙정렬</li>
+  <li>합병정렬</li>
+</ol>
+
+<p><br />
+따라서, 더 짧을 시간으로 구현할 수 있는 <strong>Merge sort (합병정렬)</strong>을 쓰는 것이 좋다. 지금부터 합병정렬에 대해 설명해 보겠다.
+<br /></p>
+
+<h2 id="1-divide-and-conquer-분할정복">1. Divide and Conquer (분할정복)</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.io.*;
+
+public class Main {
+
+    public static int[] src;
+    public static int[] temp;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter((System.out)));
+
+        int n = Integer.parseInt(br.readLine());
+        src = new int[n];
+        temp = new int[src.length];
+
+        for (int i = 0; i &lt; n; i++){
+            src[i] = Integer.parseInt(br.readLine());
+        }
+
+        mergeSort(0, src.length-1);
+
+        for (int i = 0; i &lt; n; i++){
+            bw.write(Integer.toString(src[i]) + "\n");
+        }
+
+        bw.flush();
+    }
+
+
+    public static void mergeSort(int start, int end){
+        if (start &lt; end){
+
+
+            int mid = (start+end) / 2;
+            mergeSort(start, mid);
+            mergeSort(mid+1, end);
+
+            int p = start;
+            int q = mid + 1;
+
+            int idx = p;
+
+            while (p &lt;= mid || q &lt;= end){
+                if (q &gt; end || (p &lt;= mid &amp;&amp; src[p] &lt; src[q])){
+                    temp[idx++] = src[p++];
+                } else{
+                    temp[idx++] = src[q++];
+                }
+            }
+
+            for (int i = start; i &lt;= end; i++){
+                src[i] = temp[i];
+            }
+        }
+    }
+}
+
+</code></pre></div></div>
+:ET

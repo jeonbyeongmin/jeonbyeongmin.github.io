@@ -1,0 +1,91 @@
+I"�<p><br />
+가장 간단한 알고리즘으로 쉽게 구현할 수 있는 정렬은 다음과 같다.</p>
+
+<p><br /></p>
+
+<ol>
+  <li>Insertion Sort – 삽입정렬</li>
+  <li>Selection Sort – 선택정렬</li>
+  <li>Bubble Sort – 버블정렬</li>
+</ol>
+
+<p>버블정렬과 선택정렬은 모든 경우에 O(n^2)시간이 걸리고 삽입정렬 또한 최악의 경우 O(n^2)시간이 걸리기 때문에 매우 비효율적인 알고리즘이라는 것을 알 수 있다. 다음은 조금 복잡한 알고리즘으로 구현할 수 있는 정렬이다.</p>
+
+<p><br /></p>
+
+<ol>
+  <li>Quick Sort – 퀵정렬</li>
+  <li>Heap Sort – 힙정렬</li>
+  <li>Merge Sort – 합병정렬</li>
+</ol>
+
+<p>퀵정렬은 이름만 보면 세상에서 가장 빠른 정렬같지만 사실은 그렇지 않다. 삽입정렬, 선택정렬, 버블정렬보다 평균의 경우 빠른 것은 사실이지만 최악의 경우 O(n^2)시간이 걸리기 때문에 그 경우엔 비효율적인 알고리즘이라고 할 수 있다. 힙정렬은 합병정렬과 마찬가지로 Binary tree로 접근하는 알고리즘이기 때문에 모든 경우에 O(nlogn)시간이라는 매우 짧은 시간이 걸린다. 하지만 어렵고, 가장 큰 값 몇 개를 찾을 때 더 유용한 알고리즘이다.</p>
+
+<p><br />
+따라서 더 쉽고, 더 짧을 시간으로 구현할 수 있는 <strong>Merge sort (합병정렬)</strong>을 알아두면 코딩할 때 짱좋다. 여튼 그런 이유로 지금부터 합병정렬에 대해 설명해 보겠다.
+<br /></p>
+
+<h2 id="1-divide-and-conquer-분할정복">1. Divide and Conquer (분할정복)</h2>
+<blockquote>
+  <p>분할정복은 말 그대로  분할하고, 정복한다는 뜻이다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import java.io.*;
+
+public class Main {
+
+    public static int[] src;
+    public static int[] temp;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter((System.out)));
+
+        int n = Integer.parseInt(br.readLine());
+        src = new int[n];
+        temp = new int[src.length];
+
+        for (int i = 0; i &lt; n; i++){
+            src[i] = Integer.parseInt(br.readLine());
+        }
+
+        mergeSort(0, src.length-1);
+
+        for (int i = 0; i &lt; n; i++){
+            bw.write(Integer.toString(src[i]) + "\n");
+        }
+
+        bw.flush();
+    }
+
+
+    public static void mergeSort(int start, int end){
+        if (start &lt; end){
+
+
+            int mid = (start+end) / 2;
+            mergeSort(start, mid);
+            mergeSort(mid+1, end);
+
+            int p = start;
+            int q = mid + 1;
+
+            int idx = p;
+
+            while (p &lt;= mid || q &lt;= end){
+                if (q &gt; end || (p &lt;= mid &amp;&amp; src[p] &lt; src[q])){
+                    temp[idx++] = src[p++];
+                } else{
+                    temp[idx++] = src[q++];
+                }
+            }
+
+            for (int i = start; i &lt;= end; i++){
+                src[i] = temp[i];
+            }
+        }
+    }
+}
+
+</code></pre></div></div>
+:ET
