@@ -16,7 +16,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jeonbyeongmin/jeonbyeongmin.github.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # 타이틀 옆에 작게 들어가는 이미지path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "내가 쓰고 내가 공부하는 블로그"
+masthead_title           : "내가 보려고 만든 블로그"
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 
