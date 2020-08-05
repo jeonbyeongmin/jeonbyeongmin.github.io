@@ -1,8 +1,9 @@
 ---
+title: "[알고리즘] Merge Sort(합병 정렬)에 대해 설명해 보겠다"
 comments: false
 layout: single
 share: false
-title: "[알고리즘] Merge Sort(합병 정렬)에 대해 설명해 보겠다"
+related: false
 ---
 
 <br/>
