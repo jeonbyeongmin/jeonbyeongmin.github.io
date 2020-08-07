@@ -1,0 +1,24 @@
+I"A<p><br /></p>
+
+<p>    정렬에 대한 알고리즘은 다양하다. 빠른 속도를 보여주는 정렬은 \(O(nlogn)\)시간이 걸리는 퀵 정렬 (Quick Sort), 힙 정렬 (Heap Sort), 합병 정렬 (Merge Sort)이 있고, 그 중에서 대부분의 경우에 퀵 정렬을 쓴다고 소개했었다. <br />
+     하지만 오늘 설명할 <span style="color:green"> <strong>카운팅 정렬 (Counting Sort)</strong></span>의 시간복잡도는 \(O(n+k)\)이며 \(n &gt; k\)인 경우에는 퀵 정렬보다 훨씬 빠른 성능을 자랑한다.</p>
+
+<blockquote>
+  <p>그렇다면 왜 대부분의 경우에 퀵 정렬을 사용할까</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="01-counting-sort의-개념과-동작과정">01. Counting Sort의 개념과 동작과정</h2>
+<p><br /></p>
+
+<blockquote>
+  <p>Counting Sort는 비교 기반 정렬이 아니다.</p>
+</blockquote>
+
+<p><img src="https://spagnuolocarmine.github.io/assets/img/count.gif" alt="" /></p>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+:ET

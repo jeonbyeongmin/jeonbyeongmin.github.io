@@ -1,0 +1,8 @@
+I"�<p><br /></p>
+
+<p>    합병정렬을 설명한 포스트에서 말했었지만 정렬에 대한 알고리즘은 다양하다. 보통 빠른 속도를 보여주는 정렬 알고리즘으로는 \(O(nlogn)\)시간이 걸리는 퀵정렬(Quick Sort, 힙정렬(Heap Sort), 합병정렬(Merge Sort)이 있고, 그 중에서 가장 많은 경우에 퀵정렬을 쓴다고 소개했었다. 하지만 오늘 설명할 <span style="color:red"> <strong>계수정렬(Counting Sort)</strong></span>은 \(O(n+k)\)로 \(k &lt; n\)인 경우에는 퀵정렬보다 훨씬 빠른 정렬이다.</p>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+:ET
