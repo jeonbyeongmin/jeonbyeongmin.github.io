@@ -1,8 +1,0 @@
-I"#<p><br /></p>
-
-<p>    <code class="language-plaintext highlighter-rouge">합병정렬</code>을 설명한 포스트에서 말했었지만 정렬에 대한 알고리즘은 다양하다. 보통 빠른 속도를 보여주는 정렬 알고리즘으로는 \(O(nlogn)\)시간이 걸리는 <code class="language-plaintext highlighter-rouge">퀵정렬(Quick Sort)</code>, <code class="language-plaintext highlighter-rouge">힙정렬(Heap Sort)</code>, <code class="language-plaintext highlighter-rouge">합병정렬(Merge Sort)</code>이 있고, 그 중에서 가장 많은 경우에 <code class="language-plaintext highlighter-rouge">퀵정렬</code>을 쓴다고 소개했었다. 하지만 오늘 설명할 <code class="language-plaintext highlighter-rouge">&lt;span style = "color:red"&gt; **계수정렬(Counting Sort)**&lt;/span&gt;</code>은 \(O(n+k)\)로 어떤 경우에는 퀵정렬보다 빠를 수도 있다. 그 경우는 나중</p>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
-</script>
-
-:ET
