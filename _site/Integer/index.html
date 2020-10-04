@@ -1,0 +1,471 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>비트와 바이트 - JEON BYEONGMIN</title>
+<meta name="description" content="Q1. 메모리나, 레지스터에 데이터가 표현되는 방식을 이해하는 것은 매우 중요하다. 그 이유가 무엇일까?          우리가 다루게 될 프로그램에서 어떻게 정수나 부동소수점을 컴퓨터가 처리하고 계산하는지 아는 것은 중요하다. 메모리 접근도 정수 연산을 통해서 이뤄지고, CPU의 레지스터에 어떻게 정수형이 저장되고 메모리 주소가 계산되는 지를 알아야 한다.">
+
+
+  <meta name="author" content="전병민">
+  
+  <meta property="article:author" content="전병민">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JEON BYEONGMIN">
+<meta property="og:title" content="비트와 바이트">
+<meta property="og:url" content="http://localhost:4000/Integer/">
+
+
+  <meta property="og:description" content="Q1. 메모리나, 레지스터에 데이터가 표현되는 방식을 이해하는 것은 매우 중요하다. 그 이유가 무엇일까?          우리가 다루게 될 프로그램에서 어떻게 정수나 부동소수점을 컴퓨터가 처리하고 계산하는지 아는 것은 중요하다. 메모리 접근도 정수 연산을 통해서 이뤄지고, CPU의 레지스터에 어떻게 정수형이 저장되고 메모리 주소가 계산되는 지를 알아야 한다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-10-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Integer/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "전병민",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JEON BYEONGMIN Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          공부를 해보자
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">비트와 바이트</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/IMG_3336.png" alt="전병민" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">전병민</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>개발자 지망생</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="qudals7613@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/jeonbyeongmin" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:qudals7613@gmail.com">
+            <meta itemprop="email" content="qudals7613@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="비트와 바이트">
+    <meta itemprop="description" content="  Q1. 메모리나, 레지스터에 데이터가 표현되는 방식을 이해하는 것은 매우 중요하다. 그 이유가 무엇일까?        우리가 다루게 될 프로그램에서 어떻게 정수나 부동소수점을 컴퓨터가 처리하고 계산하는지 아는 것은 중요하다. 메모리 접근도 정수 연산을 통해서 이뤄지고, CPU의 레지스터에 어떻게 정수형이 저장되고 메모리 주소가 계산되는 지를 알아야 한다.">
+    <meta itemprop="datePublished" content="2020-10-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">비트와 바이트
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <h3 id="q1-메모리나-레지스터에-데이터가-표현되는-방식을-이해하는-것은-매우-중요하다-그-이유가-무엇일까">Q1. 메모리나, 레지스터에 데이터가 표현되는 방식을 이해하는 것은 매우 중요하다. 그 이유가 무엇일까?</h3>
+  <p> 
+     우리가 다루게 될 프로그램에서 어떻게 정수나 부동소수점을 컴퓨터가 처리하고 계산하는지 아는 것은 중요하다. 메모리 접근도 정수 연산을 통해서 이뤄지고, CPU의 레지스터에 어떻게 정수형이 저장되고 메모리 주소가 계산되는 지를 알아야 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="--알아두면-좋은-지식들">✓   알아두면 좋은 지식들</h1>
+<h3 id="1byte-는-8bits-이다">1byte 는 8bits 이다.</h3>
+<p>  1바이트는 8개의 0이나 1로 표현할 수 있다는 뜻이다. ( bit : Binary Digit ) 가령, 8비트로 표현 가능한 수는 <strong>‘0000 0001’ 부터 ‘1111 1111’ 까지</strong>이다. 8비트를 10진수로 표현 가능한 수는 <strong>‘0’부터 ‘255’까지</strong>이다. 8비트를 16진수로 표현 가능한 수는 <strong>‘00’ 부터 ‘FF’ 까지</strong>이다.</p>
+
+<h3 id="1word는-4byte-혹은-8byte-이다">1word는 4byte 혹은 8byte 이다.</h3>
+<p>  일반적으로 주소는 메모리에서 워드의 첫 번째 바이트 위치의 값이다. 1워드 씩 규칙적인 공간을 할당한 것이다. 따라서 메모리 주소는 1워드 씩 증가하며 접근한다. 1워드 씩 증가하는 이유는 이것이 메모리 관리를 하는 것에 굉장히 효율적이다. 일일이 앞에 있는 값들을 탐색해야 우리가 원하는 주소에 접근하는 것이 가능하기 때문에 1바이트 씩 접근하는 것보다 4바이트 씩 접근하는 것이 훨씬 빠른 것이다. C언어에서 포인터도 1워드를 사용한다.</p>
+<blockquote>
+  <p>만약 1word가 4byte인 컴퓨터에서 주소값은<span style="color:green"> 0000 0004 0008 0012</span> 와 같이 4byte씩 증가하는 것이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="lsb와-msb">LSB와 MSB</h3>
+<p>  <strong>LSB는 ‘Least Significant Bit’의 약자이다.</strong> 즉 전체 비트에서 가장 작은 값을 가지는 비트에 해당하며 가장 오른쪽에 위치한다. 반면, <strong>MSB는 ‘Most Significant Bit’의 약자이다.</strong> 전체 비트에서 가장 큰 값을 가지는 비트에 해당하며 가장 왼쪽에 위치한다. 다만 대문자로 표기할 시에는 비트를 바이트로 바꾸어 말하기도 한다.</p>
+
+<h3 id="byte-ordering--바이트-저장-순서">Byte Ordering :: 바이트 저장 순서</h3>
+<p>  <strong>Big Endian</strong>과 <strong>Little Endian</strong>이 있다. Big Endian은 LSB가 최대 주소에 저장되며 디버깅에 용이한 반명 Little Endian은 LSB가 최소 주소에 저장되고 형 변환에 용이하다. 우리가 잘 아는 x86은 Little Endian에 해당한다.</p>
+<blockquote>
+  <p>가령 0x A0 B0 C0 <span style="color: blue">D0</span>이라는 값을 메모리에 저장할 때, Big Endian은 A0 B0 C0 <span style="color: blue">D0</span> 순서로 저장되고 Little Endian은 <span style="color: blue">D0</span> C0 B0 A0 순서로 저장된다.</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-10-04T00:00:00+09:00">October 4, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%ED%8A%B8%EC%99%80+%EB%B0%94%EC%9D%B4%ED%8A%B8%20http%3A%2F%2Flocalhost%3A4000%2FInteger%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FInteger%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FInteger%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+            
+      </div>
+    </div>
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 전병민. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
