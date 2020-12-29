@@ -1,7 +1,7 @@
 var store = [{
-        "title": "비트와 바이트",
-        "excerpt":"Q1. 메모리나, 레지스터에 데이터가 표현되는 방식을 이해하는 것은 매우 중요하다. 그 이유가 무엇일까?       우리가 다루게 될 프로그램에서 어떻게 정수나 부동소수점을 컴퓨터가 처리하고 계산하는지 아는 것은 중요하다. 메모리 접근도 정수 연산을 통해서 이뤄지고, CPU의 레지스터에 어떻게 정수형이 저장되고 메모리 주소가 계산되는 지를 알아야 한다. ✓   알아두면 좋은 지식들...","categories": [],
+        "title": "Machine Learning 1 - Microsoft Learning Platform MOOC",
+        "excerpt":"Microsoft Learning Platform에 게시되어 있는 MS 소속 전미정님의 동영상 강의를 기반으로 작성하였다. MLP Machine Learning 1 - 개요 인공지능은 인간을 본떠서 만든 기술을 의미하고 이 인공지능을 구현하기 위한 방법 중 하나가 바로 머신러닝이다 머신러닝은 사람처럼 데이터를 수집해서 학습하도록 하는 것이다. 머신러닝을 구현하는 알고리즘에는 로지스틱 리그레션, 결정트리, 서포트 벡터 머신 등...","categories": [],
         "tags": [],
-        "url": "http://localhost:4000/Integer/",
+        "url": "http://localhost:4000/machine-learning-1-microsoft-learning-platform-mooc/",
         "teaser": null
       }]
