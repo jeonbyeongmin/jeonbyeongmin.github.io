@@ -1,0 +1,33 @@
+I"�<p><img src="https://media.giphy.com/media/JsIqJilmAj7883eHyY/giphy.gif" width="100%" /></p>
+
+<blockquote>
+  <h1 id="mlp-machine-learning-2---learning의-의미와-data-이해">MLP Machine Learning 2 - Learning의 의미와 Data 이해</h1>
+</blockquote>
+
+<p>머신러닝과 딥러닝은 모두 input data를 받아서 처리한 후에 머신러닝의 경우 전통적인 머신러닝 모델을, 딥러닝의 경우 뉴럴 네트워크를 활용해서 output을 만들어낸다. 이런 전반적인 흐름은 비슷하지만 머신러닝은 <strong>Feature Engineering을 하고</strong>, 딥러닝은 <strong>Feature Extraction이 일어난다</strong>는 차이가 있다.</p>
+
+<p>앞서 딥러닝이 머신러닝의 한 종류라고 했는데 이게 무슨 소리냐. Feature Engineering이라는 것은 사람이 여러개의 Feature가 있을 때 어떤 것이 최종 결과물에 영향을 미칠 지 고려해 가면서 변수를 조정하고 빼는 과정이 Feature Engineering이고, Feature Extraction은 단어에서 미루어 짐작할 수 있듯이 Extraction 자체가 추출한다는 뜻이다. 그래서 이 추출하는 것은 사람이 뽑아내는 것이 아니라 기계가 Feature에서 바로 특징을 뽑아내는 것이기 때문에 사람은 Feature를 건들이지 않는다.</p>
+
+<p>즉 Feature Extraction은 사람이 해주어야하는 일을 자체적으로 모델이 해주는 것이기 때문에 사람의 손이 덜 가고 그 도메인에 대한 이해가 머신러닝에 비해서는 덜 필요로 한다.</p>
+
+<p><br />
+<br /></p>
+<h2 id="feature-engineering">Feature Engineering</h2>
+
+<p><img src="../img/titanic.jpg" width="100%" /></p>
+
+<p>Feature Engineering 이라는 것은 어떻게 할 수 있을까? 타이타닉호의 생존자와 사망자의 데이터를 가지고 예를 들어보자. 우리는 어떤 사람이 타이타닉호에 탑승했을 때 생존을 할 지 사망을 할 지 예측을 하고 싶다. 그러면 그 생존 여부에 영향을 미치는 데이터가 무엇일지, 영향을 미치지 않는 데이터는 또 무엇일지 생각해봐야 할 것이다.</p>
+
+<p>자, 그렇다면 데이터를 나열해보자. 먼저 이름이 주어졌다. 상식적으로 이름때문에 타이타닉호에서 살아남지 못했다고 말할 수는 없다. 그 다음 나이와 성별이 주어졌다. 여성과 저연령층, 고연령층은 추운 바다에서 오래 살아남을 확률이 적을 뿐더러, 만약 구조 작업 중에 노인이나 아이, 여성을 먼저 구하라는 지시가 있었다면 나이와 성별은 분명 유의미한 데이터이다. 선실의 등급 또한 높을수록 먼저 구조될 확률이 높았기 때문에 유의미한 데이터라 볼 수 있다.</p>
+
+<p>이렇게 각각의 데이터를 보면서 최종 결과물에 영향을 끼칠지 끼치지 않을지 생각하면서 데이터를 골라내는 작업이 바로 Feature Engineering이다. 그러면 우리는 이름은 제외하고 나이와 성별, 선실의 등급 등의 Feature만을 가지고 모델링을 할 수가 있을 것이다.</p>
+
+<p>하지만 이렇게 단순히 몇가지 Feature만 골래내는 작업을 한다고 하더라도 어느정도 시간이 걸리는 것을 알 수 있다. 데이터 하나하나 이것이 어떤 의미인지 생각해보고 결과물에 영향을 끼칠지 고려해봐야 하기 때문에 시간이 꽤 걸릴 것이다.</p>
+
+<p><br />
+<br /></p>
+<h2 id="feature--label">Feature &amp; Label</h2>
+<p><img src="../img/FeatureAndLabel.png" width="100%" /></p>
+
+<p>우리나라에서 딥러닝, 머신러닝으로 굉장히 유명하신 김성은 교수님께서 위 수식만 이해하다면 누구나 다 머신러닝을 할 수 있다라고 말씀하셨다.</p>
+:ET
