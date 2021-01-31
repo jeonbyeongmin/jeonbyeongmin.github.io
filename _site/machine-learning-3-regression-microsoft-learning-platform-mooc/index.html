@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Posts by Year (grid view) - JEON BYEONGMIN</title>
-<meta name="description" content="공부를 합시다">
+<!-- begin _includes/seo.html --><title>Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC - JEON BYEONGMIN</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="전병민">
   
+  <meta property="article:author" content="전병민">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="JEON BYEONGMIN">
-<meta property="og:title" content="Posts by Year (grid view)">
-<meta property="og:url" content="http://localhost:4000/year-archive-grid/">
+<meta property="og:title" content="Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC">
+<meta property="og:url" content="http://localhost:4000/machine-learning-3-regression-microsoft-learning-platform-mooc/">
 
 
-  <meta property="og:description" content="공부를 합시다">
-
-
-
+  <meta property="og:description" content="">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-01-31T00:00:00+09:00">
 
 
 
@@ -41,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/year-archive-grid/">
+<link rel="canonical" href="http://localhost:4000/machine-learning-3-regression-microsoft-learning-platform-mooc/">
 
 
 
@@ -103,7 +107,7 @@
 
   </head>
 
-  <body class="layout--posts">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -167,7 +171,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Posts by Year (grid view)</li>
+        <li class="current">Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC</li>
       
     
   </ol>
@@ -298,51 +302,18 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-01-31T00:00:00+09:00">
     
-      <h1 id="page-title" class="page__title">Posts by Year (grid view)</h1>
-    
-    
 
-
-<ul class="taxonomy__index">
-  
-  
-    <li>
-      <a href="#2021">
-        <strong>2021</strong> <span class="taxonomy__count">2</span>
-      </a>
-    </li>
-  
-    <li>
-      <a href="#2020">
-        <strong>2020</strong> <span class="taxonomy__count">1</span>
-      </a>
-    </li>
-  
-</ul>
-
-
-
-
-  <section id="2021" class="taxonomy__section">
-    <h2 class="archive__subtitle">2021</h2>
-    <div class="entries-grid">
+    <div class="page__inner-wrap">
       
-        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/machine-learning-3-regression-microsoft-learning-platform-mooc/" rel="permalink">Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC
-</a>
-      
-    </h2>
-    
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC
+</h1>
+          
 
   <p class="page__meta">
     
@@ -363,13 +334,103 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><img src="https://media.giphy.com/media/JsIqJilmAj7883eHyY/giphy.gif" width="100%" /></p>
+
+<p>다음 주어진 문제의 공통점은 무엇일까?</p>
+<ul>
+  <li>키에 따른 신발 사이즈</li>
+  <li>시간에 따른 커피 소비량</li>
+  <li>햇빛 노출 시간에 따른 주근깨 개수</li>
+  <li>달 위상에 따른 범죄 수</li>
+  <li>기온에 따른 쇼핑 장바구니의 물품 개수</li>
+</ul>
+
+<p><br /></p>
+
+<p>리그레션 알고리즘은 첫번째 포스트에서 설명했듯이 Supervised Learning이고 이에 따라 문제와 정답이 주어진다는 것을 다시 한번 생각하면서 시작한다. 앞서 적은 위 물음 정답은 전부 다 어떤 <strong>특정한 숫자를 예측하는 문제</strong>라는 것이다. 사이즈, 소비량, 개수 이런 것들은 전부 어떤 숫자로 떨어지는 값이다. 이런 문제들을 해결하기 위해서 리그레션 알고리즘을 사용할 수 있다.</p>
+
+<p><br />
+<br /></p>
+<h2 id="simple-regression">Simple Regression</h2>
+<p><img src="../img/FeatureAndLabel.png" width="100%" /></p>
+
+<p>지난번 머신러닝을 이해하기 위해서 사용했던 수식이다. Feature에 해당하는 것이 독립 변수, Label에 해당하는 것이 독립변수에 영향을 받는 종속변수이다. 또한 그래프에서 기울기를 의미하는 것이 w이고 x가 0일때 즉, 초기값이 b인 것이다. 이 간단한 식이 바로 Simple Regression이라고 할 수 있다.</p>
+
+<p><br /></p>
+
+<p><img src="../img/mlp3-1.png" width="100%" /></p>
+
+<p>지난 포스트에서 설명한 것처럼 위와 같은 데이터가 주어졌을 때 어떻게 y=wx+b 라는 식을 구할 수 있을까? 라는 질문이 바로 머신러닝이 해결하고자 하는 것이다. 우리는 저 점들을 모두 다 어느 정도는 만족시켜줄 수 있는 요정도의 그래프를 하나 임의로 그릴 수 있을 것이다.</p>
+
+<p><br /></p>
+
+<p><img src="../img/mlp3-2.png" width="100%" /></p>
+
+<p>이렇게 그래프가 그려졌을 때 우리는 기울기를 통해 w를, y절편을 이용하여 b를 구하여 y=wx+b 라는 식을 구해낼 수 가 있다. 말은 쉽지만 위 그림처럼 임의로 그려놓은 선이, 기울기가, y절편이 최적의 값일리가 없다. 그렇기 때문에 그것이 가장 중요한 이슈이고 최적의 값을 예측하기 위해서 가장 적절한 기울기와 가장 적절한 b를 계산할 필요가 있는 것이다.</p>
+
+<p><br /></p>
+
+<p><img src="../img/mlp3-3.png" width="100%" /></p>
+
+<p>우리가 원래 가지고 있던 데이터 값과 모델이 예측한 값을 비교해볼 수 있다. 주황색 점이 우리가 가지고 있던 데이터 값이고 파란색 점이 모델이 예측한 값이다. 당연히 이 차이가 작으면 작을수록 예측을 잘하는 모델이라는 것을 쉽게 알 수 있다. 단 마이너스 값이 나올 것을 고려하여 제곱하고 루트를 씌우거나 절대값을 씌우는 방법을 반드시 사용해야 한다.</p>
+
+<p><br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-31T00:00:00+09:00">January 31, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Machine+Learning+3+-+Regression+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98+%EC%9D%B4%ED%95%B4+-+Microsoft+Learning+Platform+MOOC%20http%3A%2F%2Flocalhost%3A4000%2Fmachine-learning-3-regression-microsoft-learning-platform-mooc%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine-learning-3-regression-microsoft-learning-platform-mooc%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine-learning-3-regression-microsoft-learning-platform-mooc%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
 
       
+  <nav class="pagination">
+    
+      <a href="/mlp-machine-learning-2-learning-data/" class="pagination--pager" title="Machine Learning 2 - Learning의 의미와 Data 이해 - Microsoft Learning Platform MOOC
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
         
+          
 
 
 
@@ -408,16 +469,8 @@
   </article>
 </div>
 
-      
-    </div>
-    <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
-  </section>
-
-  <section id="2020" class="taxonomy__section">
-    <h2 class="archive__subtitle">2020</h2>
-    <div class="entries-grid">
-      
         
+          
 
 
 
@@ -456,14 +509,13 @@
   </article>
 </div>
 
-      
+        
+      </div>
     </div>
-    <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
-  </section>
-
-
-  </div>
+  
+  
 </div>
+
     </div>
 
     

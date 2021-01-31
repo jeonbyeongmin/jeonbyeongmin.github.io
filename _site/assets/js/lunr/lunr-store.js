@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/mlp-machine-learning-2-learning-data/",
         "teaser": null
+      },{
+        "title": "Machine Learning 3 - Regression 알고리즘의 이해 - Microsoft Learning Platform MOOC",
+        "excerpt":"다음 주어진 문제의 공통점은 무엇일까? 키에 따른 신발 사이즈 시간에 따른 커피 소비량 햇빛 노출 시간에 따른 주근깨 개수 달 위상에 따른 범죄 수 기온에 따른 쇼핑 장바구니의 물품 개수 리그레션 알고리즘은 첫번째 포스트에서 설명했듯이 Supervised Learning이고 이에 따라 문제와 정답이 주어진다는 것을 다시 한번 생각하면서 시작한다. 앞서 적은 위...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/machine-learning-3-regression-microsoft-learning-platform-mooc/",
+        "teaser": null
       }]
